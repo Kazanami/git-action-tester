@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: TEST CI
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -33,5 +33,5 @@ jobs:
         git remote set-url origin "https://Kazanami:${{secrets.GITHUB_TOKEN}}@github.com/Kazanami/git-action-test"
         git config user.name "Github Action Runner"
         git config user.email "github-action-runner@example.com"
-        git commit -m "[`date +%F%R`] this is test commit"
+        git commit -m "[`date +%F%R`] this is test commit" --allow-empty
         git push origin master
