@@ -27,11 +27,4 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
-        echo `date`
-        git remote set-url origin "https://Kazanami:${{secrets.GITHUB_TOKEN}}@github.com/Kazanami/git-action-tester"
-        git config user.name "Github Action Runner"
-        git config user.email "github-action-runner@example.com"
-        git commit -m "[`date +%F %R`] this is test commit" --allow-empty
-        git push origin master
+        bash ./test.sh
