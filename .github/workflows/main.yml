@@ -5,8 +5,8 @@ name: TEST CI
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-  push:
-    branches: [ master ]
+#  push:
+#    branches: [ master ]
   issues:
     types: [opened, edited]
 
@@ -32,3 +32,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         bash ./test.sh
+    - name: Auto Close issues
+      uses: lucasbento/auto-close-issues@v1.0.2
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
