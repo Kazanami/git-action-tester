@@ -39,3 +39,8 @@ jobs:
         issue-close-message: "@${issue.user.login}: hello! :wave:\n\nThis issue is being automatically closed because it does not follow the issue template." # optional property
         closed-issues-label: "🙁 Not following issue template" # optional property: 
     
+    - name: test get branch infomation
+      env:
+        git_info: ${{ github.ref }}
+      run: |
+        bash -c "echo ${git_info}"
