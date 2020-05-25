@@ -25,4 +25,4 @@ jobs:
         results: ${{ steps.create_files.outputs }}
       run: |
         sudo apt install -y jq
-        jq $results
+        jq ${results}
