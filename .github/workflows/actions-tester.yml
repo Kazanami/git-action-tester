@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    
+    - uses: kazanami-docker-container/curl-installed-ubuntu
+      
     - name: Creating test files
       id: create_files
       run: date +%s > report.txt
@@ -26,9 +27,6 @@ jobs:
 #      run: |
 #        sudo apt install -y jq
 #        jq ${results}
-    - name: Setup curl
-    - uses: kazanami-docker-container/curl-installed-ubuntu
-    
     - name: run curl
       run: curl --version
       
