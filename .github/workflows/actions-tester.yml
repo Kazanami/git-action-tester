@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: kazanami-docker-container/curl-installed-ubuntu
+    - uses: kazanami-docker-container/curl-installed-ubuntu@master
       
     - name: Creating test files
       id: create_files
