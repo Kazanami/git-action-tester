@@ -1,1 +1,18 @@
 name: Docker Test
+
+on:
+  push:
+    branches: [ 'master' ]
+
+jobs:
+  containers_test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["ubuntu:latest", "centos:latest", "alpine:latest", "debian:latest"]
+    
+    container: ${{ matrix.os }}
+    steps:
+      - name: OS Version of ${{ matrix.os }}
+        run: cat /etc/os-release
