@@ -28,7 +28,9 @@ jobs:
 #        sudo apt install -y jq
 #        jq ${results}
     - name: run curl
-      run: curl --version
+      run: |
+        cat /etc/os-release
+        curl --version
     
     - uses: kazanami-docker-container/curl-installed-centos@master
     
