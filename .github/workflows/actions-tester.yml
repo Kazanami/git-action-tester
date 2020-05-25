@@ -21,4 +21,4 @@ jobs:
 #        token:  ${{ secrets.GITHUB_TOKEN }}
 #        commit-message: Add 
     - name: test-result
-      run: echo ${{ steps.create_files }}
+      run: echo ${{ steps.create_files.outputs }}
