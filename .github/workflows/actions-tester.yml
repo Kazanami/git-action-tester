@@ -1,8 +1,8 @@
 name: action-test
 
-#on:
-#  push:
-#    branches: [ 'master' ]
+on:
+  push:
+    branches: [ 'master' ]
 
 jobs:
   running_test:
@@ -20,9 +20,15 @@ jobs:
 #      with:
 #        token:  ${{ secrets.GITHUB_TOKEN }}
 #        commit-message: Add 
-    - name: test-result
-      env: 
-        results: ${{ steps.create_files.outputs }}
-      run: |
-        sudo apt install -y jq
-        jq ${results}
+#    - name: test-result
+#      env: 
+#        results: ${{ steps.create_files.outputs }}
+#      run: |
+#        sudo apt install -y jq
+#        jq ${results}
+    - name: Setup curl
+    - uses: kazanami-docker-container/curl-installed-ubuntu
+    
+    - name: run curl
+      run: curl --version
+      
