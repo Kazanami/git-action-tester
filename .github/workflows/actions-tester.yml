@@ -21,6 +21,8 @@ jobs:
 #        token:  ${{ secrets.GITHUB_TOKEN }}
 #        commit-message: Add 
     - name: test-result
+      env: 
+        results: ${{ steps.create_files.outputs }}
       run: |
         sudo apt install -y jq
-        jq ${{ steps.create_files.outputs }}
+        jq $results
