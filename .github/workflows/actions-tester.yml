@@ -7,6 +7,7 @@ on:
 jobs:
   running_test:
     runs-on: ubuntu-latest
+    container: "docker.pkg.github.com/kazanami-docker-container/curl-installed-ubuntu/custon-ubuntu:latest"
     steps:
     - uses: actions/checkout@v2
     - uses: kazanami-docker-container/curl-installed-ubuntu@master
@@ -27,14 +28,4 @@ jobs:
 #      run: |
 #        sudo apt install -y jq
 #        jq ${results}
-    - name: run curl
-      run: |
-        cat /etc/os-release
-        curl --version
-    
-    - uses: kazanami-docker-container/curl-installed-centos@master
-    
-    - name: run curl on centos
-      run: |
-        cat /etc/os-release
-        curl --version
+  
