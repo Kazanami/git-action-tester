@@ -1,1 +1,24 @@
 name: action-test
+
+on:
+  push:
+    branches: [ 'master' ]
+
+jobs:
+  running_test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Creating test files
+      id: create_files
+      run: date +%s > report.txt
+  
+#    - name: Create Pull Request
+#      if: ${{ steps.create_files.outputs.
+#      uses: peter-evans/create-pull-request@v2
+#      with:
+#        token:  ${{ secrets.GITHUB_TOKEN }}
+#        commit-message: Add 
+    - name: test-result
+      run: echo ${{ steps.create_files.outputs }}
