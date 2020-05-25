@@ -29,4 +29,10 @@ jobs:
 #        jq ${results}
     - name: run curl
       run: curl --version
-      
+    
+    - uses: kazanami-docker-container/curl-installed-centos@master
+    
+    - name: run curl on centos
+      run: |
+        cat /etc/os-release
+        curl --version
